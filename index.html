@@ -5,115 +5,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spiderman Movies Website</title>
-  
+
     <script type="module" src="./dist/main.js"></script>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./style.css">
+
+    <!-- Saját CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+    <!-- STICKY NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark header-navbar sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold header-logo" href="#">Spider-Man</a>
 
-        <nav class="navbar navbar-expand-lg navbar-dark header-navbar position-absolute w-100 top-0">
-            <div class="container-fluid px-4">
-                <a class="navbar-brand fw-bold header-logo" href="#">Spider-Man</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="nav">
-                    <ul class="navbar-nav me-auto gap-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <!-- FILMEK DROPDOWN -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Filmek</a>
-                            <ul class="dropdown-menu dropdown-black">
-                                <li><a class="dropdown-item" href="#">Spider-Man (2002)</a></li>
-                                <li><a class="dropdown-item" href="#">Spiderman the Verse (2019)</a></li>
-                                <li><a class="dropdown-item" href="#">Spider-Man: Brand New Day (2026)</a></li>
-                                <li><a class="dropdown-item" href="#">Italian Spiderman (2007)</a></li>
-                                <li><a class="dropdown-item" href="#">Spider-Man: No Way Home (2021)</a></li>
-                                <li><a class="dropdown-item" href="#">The Amazing Spider-Man (2012)</a></li>
-                                <li><a class="dropdown-item" href="#">Spider-Man: Across the Spider-Verse (2023)</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Spider-Man: Into the Spider-Verse (2018)</a></li>
-                            </ul>
-                        </li>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav me-auto gap-2">
 
-                        <!-- UNIVERZUM DROPDOWN -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Univerzum</a>
-                            <ul class="dropdown-menu dropdown-black">
-                                <li><a class="dropdown-item" href="#">Spider-Man (2002)</a></li>
-                                <li><a class="dropdown-item" href="#">Spiderman the Verse (2019)</a></li>
-                                <li><a class="dropdown-item" href="#">Spider-Man: Brand New Day (2026)</a></li>
-                                <li><a class="dropdown-item" href="#">Italian Spiderman (2007)</a></li>
-                                <li><a class="dropdown-item" href="#">Spider-Man: No Way Home (2021)</a></li>
-                                <li><a class="dropdown-item" href="#">The Amazing Spider-Man (2012)</a></li>
-                                <li><a class="dropdown-item" href="#">Spider-Man: Across the Spider-Verse (2023)</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Spider-Man: Into the Spider-Verse (2018)</a></li>
-                            </ul>
-                        </li>
+                    <!-- FILMEK -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Filmek</a>
+                        <ul class="dropdown-menu dropdown-black">
+                            <li><a class="dropdown-item" href="#">Spider-Man (2002)</a></li>
+                            <li><a class="dropdown-item" href="#">Spiderman the Verse (2019)</a></li>
+                            <li><a class="dropdown-item" href="#">Spider-Man: Brand New Day (2026)</a></li>
+                            <li><a class="dropdown-item" href="#">Italian Spiderman (2007)</a></li>
+                            <li><a class="dropdown-item" href="#">Spider-Man: No Way Home (2021)</a></li>
+                            <li><a class="dropdown-item" href="#">The Amazing Spider-Man (2012)</a></li>
+                            <li><a class="dropdown-item" href="#">Spider-Man: Across the Spider-Verse (2023)</a></li>
+                            <li><a class="dropdown-item" href="#">Spider-Man: Into the Spider-Verse (2018)</a></li>
+                        </ul>
+                    </li>
 
-                    </ul>
+                    <!-- UNIVERZUM -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Univerzum</a>
+                        <ul class="dropdown-menu dropdown-black">
+                            <li><a class="dropdown-item" href="#">Spider-Man (2002)</a></li>
+                            <li><a class="dropdown-item" href="#">Spiderman the Verse (2019)</a></li>
+                            <li><a class="dropdown-item" href="#">Spider-Man: Brand New Day (2026)</a></li>
+                            <li><a class="dropdown-item" href="#">Italian Spiderman (2007)</a></li>
+                            <li><a class="dropdown-item" href="#">Spider-Man: No Way Home (2021)</a></li>
+                            <li><a class="dropdown-item" href="#">The Amazing Spider-Man (2012)</a></li>
+                            <li><a class="dropdown-item" href="#">Spider-Man: Across the Spider-Verse (2023)</a></li>
+                            <li><a class="dropdown-item" href="#">Spider-Man: Into the Spider-Verse (2018)</a></li>
+                        </ul>
+                    </li>
 
-                    <!-- KERESŐ -->
-                    <form class="d-flex header-search">
-                        <input class="form-control form-control-sm me-2" type="search" placeholder="Keresés">
-                        <button class="btn btn-danger btn-sm">🔍</button>
-                    </form>
+                </ul>
 
-                </div>
-            </div>
-        </nav>
-
-        <!-- CAROUSEL -->
-        <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner carousel-bordered">
-
-                <div class="carousel-item active">
-                    <img src="./imgs/img2.jpg" class="d-block w-100 carousel-img" alt="">
-                    <div class="carousel-caption custom-caption">
-                        <h5>Spiderman the Verse</h5>
-                        <p>Classic origin story</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="./imgs/img1jooo.jpg" class="d-block w-100 carousel-img" alt="">
-                    <div class="carousel-caption custom-caption">
-                        <h5>Spider-Man</h5>
-                        <p>Multiple realities</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="./imgs/img3jo.png" class="d-block w-100 carousel-img" alt="">
-                    <div class="carousel-caption custom-caption">
-                        <h5>Spider-Man: Brand New Day</h5>
-                        <p>New chapter begins</p>
-                    </div>
-                </div>
+                <!-- KERESŐ -->
+                <form class="d-flex header-search">
+                    <input class="form-control form-control-sm me-2" type="search" placeholder="Keresés">
+                    <button class="btn btn-danger btn-sm">🔍</button>
+                </form>
 
             </div>
+        </div>
+    </nav>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <!-- CAROUSEL -->
+    <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner carousel-bordered">
+
+            <div class="carousel-item active">
+                <img src="./imgs/img2.jpg" class="d-block w-100 carousel-img" alt="">
+                <div class="carousel-caption custom-caption">
+                    <h5>Spiderman the Verse</h5>
+                    <p>Classic origin story</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="./imgs/img1jooo.jpg" class="d-block w-100 carousel-img" alt="">
+                <div class="carousel-caption custom-caption">
+                    <h5>Spider-Man</h5>
+                    <p>Multiple realities</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="./imgs/img3jo.png" class="d-block w-100 carousel-img" alt="">
+                <div class="carousel-caption custom-caption">
+                    <h5>Spider-Man: Brand New Day</h5>
+                    <p>New chapter begins</p>
+                </div>
+            </div>
+
         </div>
 
-    </header>
+        <button class="carousel-control-prev" type="button"
+            data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+            data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
 
     <section class="grid"></section>
-</body>
 
+    <!-- FOOTER -->
+    <footer class="footer mt-5">
+        <div class="container text-center py-4">
+            <h5 class="footer-logo">Spider-Man Universe</h5>
+            <p class="mb-2">© 2026 Spider-Man Movies Fan Page</p>
+
+            <!-- DARK / LIGHT TOGGLE -->
+            <button id="themeToggle" class="btn btn-outline-danger btn-sm">
+                🌙 Sötét / Világos mód
+            </button>
+
+            <!-- SZÁMLÁLÓ -->
+            <div id="countdown">
+                Következő Spider-Man film megjelenéséig: <span id="time"></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- THEME SCRIPT -->
+    <script>
+        const toggleBtn = document.getElementById("themeToggle");
+        const body = document.body;
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("light-mode");
+        });
+    </script>
+
+    <!-- SZÁMLÁLÓ + SCROLL ANIM -->
+    <script>
+        // Countdown dátum
+        const nextMovieDate = new Date("2026-07-15T00:00:00");
+        const countdownElement = document.getElementById("time");
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = nextMovieDate - now;
+
+            if (diff <= 0) {
+                countdownElement.innerHTML = "Már megjelent!";
+                clearInterval(timer);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            countdownElement.innerHTML = `${days} nap ${hours} óra ${minutes} perc ${seconds} mp`;
+        }
+
+        const timer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Scroll trigger
+        const countdown = document.getElementById("countdown");
+
+        window.addEventListener("scroll", () => {
+            const countdownPosition = countdown.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight;
+
+            if(countdownPosition < screenPosition) {
+                countdown.classList.add("active");
+            } else {
+                countdown.classList.remove("active");
+            }
+        });
+    </script>
+
+</body>
 </html>

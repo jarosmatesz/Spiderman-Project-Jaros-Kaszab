@@ -1,28 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
 /* NAVBAR */
 .header-navbar {
-    background: rgba(0,0,0,0.9);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
-/* LOGO */
 .header-logo {
     color: #fff;
-    text-shadow: 0 0 10px rgba(220,20,60,0.7);
+    text-shadow: 0 0 10px rgba(220, 20, 60, 0.7);
 }
 
-/* NAV LINK HOVER */
 .navbar-dark .nav-link {
     position: relative;
     color: #fff;
 }
+
 .navbar-dark .nav-link::after {
     content: "";
     position: absolute;
@@ -33,18 +37,17 @@
     background: crimson;
     transition: width 0.25s ease;
 }
+
 .navbar-dark .nav-link:hover::after {
     width: 100%;
 }
 
-/* DROPDOWN FEKETE + minden elem hover */
+/* DROPDOWN */
 .dropdown-black {
     background: #000 !important;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
-    position: relative;
-    z-index: 9999;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
 }
 
 .dropdown-black .dropdown-item {
@@ -54,9 +57,7 @@
     transition: all 0.2s ease !important;
 }
 
-.dropdown-black .dropdown-item:hover,
-.dropdown-black .dropdown-item:focus,
-.dropdown-black .dropdown-item:active {
+.dropdown-black .dropdown-item:hover {
     background-color: crimson !important;
     color: #fff !important;
     padding-left: 28px !important;
@@ -65,43 +66,34 @@
 /* KERESŐ */
 .header-search input {
     background: #111;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
 }
+
 .header-search input::placeholder {
     color: #aaa;
 }
 
 /* CAROUSEL */
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
 .carousel-img {
     width: 100%;
     height: 70vh;
     object-fit: cover;
 }
 
-/* SLIDE BORDER + SHADOW */
 .carousel-bordered {
-    border: 2px solid rgba(0,0,0,0.25);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
-/* FELÜL SZÖVEG A CAROUSEL-ON */
 .custom-caption {
     top: 80px;
     left: 60px;
     text-align: left;
     color: #fff !important;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-    z-index: 5;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
 
-/* MOBIL */
 @media (max-width: 768px) {
     .custom-caption {
         top: 70px;
@@ -109,16 +101,12 @@
     }
 }
 
-
-body{
-    background-color: black;
-}
-
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    padding: 1rem;
+    padding: 2rem 1rem;
     width: 80%;
     margin: 0 auto;
 }
@@ -129,30 +117,111 @@ body{
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
-    width: 100%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    cursor: pointer;
 }
 
 .card img {
     width: 100%;
     height: 360px;
     object-fit: cover;
-    display: block;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.08);
 }
 
 .card h3 {
     padding: 0.75rem;
     font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
-/* törés */
-@media (max-width: 1200px) {
-    .grid { grid-template-columns: repeat(3, 1fr); }
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(220, 20, 60, 0.6);
 }
 
-@media (max-width: 900px) {
-    .grid { grid-template-columns: repeat(2, 1fr); }
+.card:hover h3 {
+    color: crimson;
 }
 
-@media (max-width: 500px) {
-    .grid { grid-template-columns: 1fr; }
+.card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -45%;
+    width: 50%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.08);
+    transform: rotate(25deg);
+    transition: 0.6s;
+    pointer-events: none;
+}
+
+.card:hover::before {
+    left: 120%;
+}
+
+@media (max-width: 1200px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .grid { grid-template-columns: 1fr; } }
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(to right, #0d0d0d, #1a0000);
+    border-top: 2px solid crimson;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+.footer-logo {
+    color: crimson;
+    text-shadow: 0 0 10px rgba(220, 20, 60, 0.7);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* LIGHT MODE */
+.light-mode {
+    background-color: #f5f5f5;
+    color: #111;
+}
+
+.light-mode .header-navbar { background: #ffffff !important; }
+.light-mode .navbar-dark .nav-link { color: #111 !important; }
+.light-mode .card { background: #ffffff; color: #111; }
+.light-mode .footer { background: #e0e0e0; color: #111; border-top: 2px solid #111; }
+.light-mode .dropdown-black { background: #ffffff !important; }
+.light-mode .dropdown-black .dropdown-item { background: #f5f5f5 !important; color: #111 !important; }
+
+/* SZÁMLÁLÓ */
+#countdown {
+    margin-top: 15px;
+    font-size: 1.5rem;       /* alapméret */
+    font-weight: bold;
+    color: crimson;           /* marad piros */
+    transition: transform 0.6s ease, text-shadow 0.6s ease;
+}
+
+/* SCROLL AKTIVÁLÁSRA */
+#countdown.active {
+    transform: scale(2); /* nagyítás */
+    text-shadow: 
+        0 0 10px crimson,
+        0 0 20px crimson,
+        0 0 30px crimson,
+        0 0 40px crimson;
+    animation: pulse 1s infinite;
+}
+
+/* PULZÁLÓ ANIMÁCIÓ */
+@keyframes pulse {
+    0% { transform: scale(2); opacity: 1; }
+    50% { transform: scale(2.1); opacity: 0.8; }
+    100% { transform: scale(2); opacity: 1; }
 }
