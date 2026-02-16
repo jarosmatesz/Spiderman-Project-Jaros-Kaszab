@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: white;
+    animation: fadeIn 1s ease-in;
+}
+
+/* HERO */
+.hero {
+    height: 70vh;
+    background: url("./imgs/img1jooo.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.7);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay h1 {
+    font-size: 40px;
+    color: #ff0040;
+}
+
+.overlay p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: crimson;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    background: white;
+    color: crimson;
+}
+
+/* SECTION */
+section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    border-left: 4px solid crimson;
+    padding-left: 10px;
+}
+
+/* VIDEO */
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* CAST */
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cast-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.cast-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px crimson;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

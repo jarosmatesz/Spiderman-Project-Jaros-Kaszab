@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #000, #200000);
+    color: white;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero {
+    height: 70vh;
+    background: url("./imgs/img2.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.75);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay h1 {
+    font-size: 42px;
+    color: crimson;
+    text-shadow: 0 0 20px red;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: crimson;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    background: white;
+    color: crimson;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
